@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 /**
  * Hello world!
  */
-public class PredicatorExamples {
+public class HandMakePredicatorExamples {
 
 
     public static void main(String[] args) {
