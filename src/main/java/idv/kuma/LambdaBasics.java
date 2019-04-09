@@ -23,6 +23,8 @@ public class LambdaBasics {
 
     public void runnableExample(){
 
+
+
         Thread t = new Thread(() -> System.out.println("aa"));
         t.start();
     }
