@@ -26,6 +26,8 @@ public class PredicateExamples {
         System.out.println(nonEmptyStrings);
 
 
+
+
         System.out.println(strings.stream().filter( s -> !s.isEmpty()).collect(Collectors.toList()));
 
     }
