@@ -1,7 +1,9 @@
 package idv.kuma.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static idv.kuma.stream.Type.*;
 
@@ -20,5 +22,11 @@ public class StreamBasicPractice {
                 new Dish("salmon", false, 450, FISH)
 
         );
+
+        System.out.println(menu.stream()
+                .filter(d -> d.getCalories() > 400)
+                .sorted(Comparator.comparing(Dish::getName))
+                .map(Dish::getName)
+                .collect(Collectors.toList()));
     }
 }
