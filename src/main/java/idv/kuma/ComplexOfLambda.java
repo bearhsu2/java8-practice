@@ -3,6 +3,7 @@ package idv.kuma;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -39,7 +40,19 @@ public class ComplexOfLambda {
 
         System.out.println(inventory.stream().filter(notRedAndHeavyOrBlack).collect(Collectors.toList()));
 
-        
+
+        // Function
+        Function<Integer, Integer> f = x -> x + 1;
+        Function<Integer, Integer> g = x -> x * 2;
+        Function<Integer, Integer> h = f.andThen(g) ;
+
+        System.out.println(h.apply(1));
+
+        Function<Integer, Integer> i = f.compose(g) ;
+
+        System.out.println(i.apply(1));
+
+
 
     }
 
