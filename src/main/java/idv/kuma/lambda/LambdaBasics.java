@@ -1,4 +1,4 @@
-package idv.kuma;
+package idv.kuma.lambda;
 
 import java.util.Comparator;
 import java.util.List;

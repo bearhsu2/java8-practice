@@ -1,4 +1,4 @@
-package idv.kuma.letter;
+package idv.kuma.lambda.letter;
 
 import java.util.function.Function;
 

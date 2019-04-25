@@ -1,4 +1,4 @@
-package idv.kuma;
+package idv.kuma.lambda;
 
 /**
  * Created by bearhsu2 on 4/13/2018.

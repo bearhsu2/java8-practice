@@ -1,4 +1,4 @@
-package idv.kuma.reader;
+package idv.kuma.lambda.reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,10 +1,10 @@
-package idv.kuma;
+package idv.kuma.lambda;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import static idv.kuma.PredicateExamples.filter;
+import static idv.kuma.lambda.PredicateExamples.filter;
 
 public class ComparatorExamples {
 

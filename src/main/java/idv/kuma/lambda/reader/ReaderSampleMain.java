@@ -1,9 +1,8 @@
-package idv.kuma.reader;
+package idv.kuma.lambda.reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.function.Predicate;
 
 public class ReaderSampleMain {
 

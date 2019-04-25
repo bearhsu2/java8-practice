@@ -1,8 +1,7 @@
 package idv.kuma;
 
+import idv.kuma.lambda.LambdaBasics;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by bearhsu2 on 4/13/2018.
