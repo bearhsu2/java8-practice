@@ -15,6 +15,13 @@ public class MapAndFlatMap {
 
 
         // FlatMap
+        String[] array = {"Goodbye", "WOrld"};
+        List<String> collect = Arrays.stream(array).map(w -> w.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(collect);
 
     }
 }
