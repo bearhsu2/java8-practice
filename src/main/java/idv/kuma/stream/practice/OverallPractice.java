@@ -1,4 +1,4 @@
-package idv.kuma.stream;
+package idv.kuma.stream.practice;
 
 public class OverallPractice {
 }
