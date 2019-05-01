@@ -5,12 +5,12 @@ import java.util.List;
 
 public class OverallPractice {
 
-    Trader raoul = new Trader("Raoul", "Cambridge");
-    Trader mario = new Trader("Mario", "Milan");
-    Trader alan = new Trader("Alan", "Cambridge");
-    Trader brian = new Trader("Brian", "Cambridge");
+    private static Trader raoul = new Trader("Raoul", "Cambridge");
+    private static Trader mario = new Trader("Mario", "Milan");
+    private static Trader alan = new Trader("Alan", "Cambridge");
+    private static Trader brian = new Trader("Brian", "Cambridge");
 
-    List<Transaction> transactions = Arrays.asList(
+    private static List<Transaction> transactions = Arrays.asList(
             new Transaction(brian, 2011, 300),
             new Transaction(raoul, 2012, 1000),
             new Transaction(raoul, 2011, 400),
@@ -19,5 +19,7 @@ public class OverallPractice {
             new Transaction(alan, 2012, 950)
     );
 
-    
+    public static void main(String[] args) {
+
+    }
 }
