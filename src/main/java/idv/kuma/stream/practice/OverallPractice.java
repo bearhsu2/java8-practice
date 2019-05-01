@@ -1,7 +1,10 @@
 package idv.kuma.stream.practice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class OverallPractice {
 
@@ -21,5 +24,11 @@ public class OverallPractice {
 
     public static void main(String[] args) {
 
+        // find 2011 transactions and sort by value
+        List<Transaction> sorted = transactions.stream()
+                .filter(t -> t.getYear() == 2011)
+                .sorted(Comparator.comparingInt(Transaction::getValue))
+                .collect(Collectors.toList());
+        System.out.println(sorted);
     }
 }
