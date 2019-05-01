@@ -28,16 +28,17 @@ public class FindAndMatch {
 
         // find any
         menu.stream()
-                .filter(d -> d.isVegetarian())
+                .filter(Dish::isVegetarian)
                 .findAny()
-                .ifPresent(d -> System.out.println(d));
+                .ifPresent(System.out::println);
 
 
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
         integers.stream()
                 .filter(i -> i % 3 == 0)
                 .findFirst()
-                .ifPresent(i -> System.out.println(i));
+                .ifPresent(System.out::println);
+
 
 
     }
