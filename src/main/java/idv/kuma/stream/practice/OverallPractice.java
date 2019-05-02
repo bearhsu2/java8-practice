@@ -15,7 +15,7 @@ public class OverallPractice {
 
     private static List<Transaction> transactions = Arrays.asList(
             new Transaction(brian, 2011, 300),
-            new Transaction(raoul, 2012, 1000),
+            new Transaction(raoul, 2012, 1001),
             new Transaction(raoul, 2011, 400),
             new Transaction(mario, 2012, 710),
             new Transaction(mario, 2012, 700),
@@ -65,6 +65,17 @@ public class OverallPractice {
                 .map(Transaction::getValue)
                 .forEach(System.out::println);
 
+        // 7) what is the largest transaction value
+        Optional<Integer> largest = transactions.stream()
+                .map(Transaction::getValue)
+                .reduce(Integer::max);
+
+        System.out.println(largest.get());
+
+        // 8) find the transaction with the smallest value
+        Optional<Transaction> smallest = transactions.stream()
+                .min(Comparator.comparing(Transaction::getValue));
+        System.out.println(smallest.get());
 
 
     }
