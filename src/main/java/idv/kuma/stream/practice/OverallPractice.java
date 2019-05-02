@@ -24,21 +24,26 @@ public class OverallPractice {
     public static void main(String[] args) {
 
         // 1) find 2011 transactions and sort by value
-        List<Transaction> transactions = OverallPractice.transactions.stream()
+        List<Transaction> sorted = transactions.stream()
                 .filter(t -> t.getYear() == 2011)
                 .sorted(Comparator.comparingInt(Transaction::getValue))
                 .collect(Collectors.toList());
-        System.out.println(transactions);
+        System.out.println(sorted);
 
         // 2) find all different cities where traders had been worked
-        List<String> cities = OverallPractice.transactions.stream()
+        List<String> cities = transactions.stream()
                 .map(t -> t.getTrader().getCity())
                 .distinct()
                 .collect(Collectors.toList());
-
         System.out.println(cities);
 
-
+        // 3) check all traders from Cambridge, sorted by name
+        List<Trader> cambridgeTraders = transactions.stream()
+                .map(Transaction::getTrader)
+                .filter(trader -> trader.getCity().equalsIgnoreCase("Cambridge"))
+                .sorted(Comparator.comparing(Trader::getName))
+                .collect(Collectors.toList());
+        System.out.println(cambridgeTraders);
 
 
     }
