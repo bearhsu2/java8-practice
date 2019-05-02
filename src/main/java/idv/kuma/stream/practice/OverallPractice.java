@@ -3,6 +3,7 @@ package idv.kuma.stream.practice;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class OverallPractice {
@@ -44,6 +45,26 @@ public class OverallPractice {
                 .sorted(Comparator.comparing(Trader::getName))
                 .collect(Collectors.toList());
         System.out.println(cambridgeTraders);
+
+        // 4) find all trader names, sorted by name
+        String allTraderNames = transactions.stream()
+                .map(transaction -> transaction.getTrader().getName())
+                .distinct()
+                .sorted()
+                .collect(Collectors.joining(", "));
+        System.out.println(allTraderNames);
+
+        // 5) Is there any traders working in Milan?
+        boolean anyMatch = transactions.stream()
+                .anyMatch(transaction -> transaction.getTrader().getCity().equalsIgnoreCase("Milan"));
+        System.out.println(anyMatch);
+
+        // 6) Print out all trade values of traders in Milan
+        transactions.stream()
+                .filter(t -> t.getTrader().getCity().equalsIgnoreCase("Milan"))
+                .map(Transaction::getValue)
+                .forEach(System.out::println);
+
 
 
     }
