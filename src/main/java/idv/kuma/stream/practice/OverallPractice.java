@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class OverallPractice {
 
@@ -24,11 +23,23 @@ public class OverallPractice {
 
     public static void main(String[] args) {
 
-        // find 2011 transactions and sort by value
-        List<Transaction> sorted = transactions.stream()
+        // 1) find 2011 transactions and sort by value
+        List<Transaction> transactions = OverallPractice.transactions.stream()
                 .filter(t -> t.getYear() == 2011)
                 .sorted(Comparator.comparingInt(Transaction::getValue))
                 .collect(Collectors.toList());
-        System.out.println(sorted);
+        System.out.println(transactions);
+
+        // 2) find all different cities where traders had been worked
+        List<String> cities = OverallPractice.transactions.stream()
+                .map(t -> t.getTrader().getCity())
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(cities);
+
+
+
+
     }
 }
