@@ -33,6 +33,16 @@ public class CreatingStreams {
             ex.printStackTrace();
         }
 
+        // 4. create from method
+        Stream.iterate(0, n -> n + 2)
+                .limit(10)
+                .forEach(System.out::println);
+        Stream.iterate(Arrays.asList(0, 1), l -> Arrays.asList(l.get(1), l.get(0) + l.get(1)))
+                .limit(10)
+                .forEach(l -> System.out.println(l.get(0)));
+
+        // 
+
 
     }
 }
