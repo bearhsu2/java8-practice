@@ -6,6 +6,8 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.function.IntSupplier;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class CreatingStreams {
@@ -41,7 +43,20 @@ public class CreatingStreams {
                 .limit(10)
                 .forEach(l -> System.out.println(l.get(0)));
 
-        // 
+        // BAD example. It's not ok to have "status" in supplier
+        IntStream.generate(new IntSupplier() {
+            private int previous = 0;
+            private int current = 1;
+
+            @Override
+            public int getAsInt() {
+                int oldPrevious = previous;
+                int next = previous + current;
+                previous = current;
+                current = next;
+                return oldPrevious;
+            }
+        }).limit(10).forEach(System.out::println);
 
 
     }
