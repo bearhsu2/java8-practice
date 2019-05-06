@@ -13,7 +13,7 @@ public class CollectorsExamples {
 
         // sum
         Integer sum1 = menu.stream()
-                .map(d -> d.getCalories())
+                .map(Dish::getCalories)
                 .reduce(0, (a, b) -> a + b);
         System.out.println(sum1);
 
@@ -32,7 +32,7 @@ public class CollectorsExamples {
         System.out.println(menu.stream().collect(Collectors.minBy(Comparator.comparingInt(Dish::getCalories))).get());
 
         // joining
-        System.out.println(menu.stream().map(d -> d.getName()).collect(Collectors.joining(", ")));
+        System.out.println(menu.stream().map(Dish::getName).collect(Collectors.joining(", ")));
 
 
     }
