@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class GroupBy {
+public class GroupAndPartition {
 
     public static void main(String[] args) {
 
@@ -52,6 +52,11 @@ public class GroupBy {
                         )
                 );
         System.out.println(fattest);
+
+        // partitioning
+        Map<Boolean, List<Dish>> isVeg = Menu.menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian));
+        System.out.println(isVeg);
+
 
     }
 }
