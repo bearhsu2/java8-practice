@@ -18,10 +18,17 @@ public class GroupBy {
 
         // by anonymous function
         Map<String, List<Dish>> groupByFunction = Menu.menu.stream().collect(Collectors.groupingBy(d -> {
-            if (d.getCalories() > 540) return "FAT";
+            if (d.getCalories() > 400) return "FAT";
             return "THIN";
         }));
         System.out.println(groupByFunction);
+
+        // 2-level grouping
+        Map<Type, Map<String, List<Dish>>> twoLevels = Menu.menu.stream().collect(Collectors.groupingBy(Dish::getType, Collectors.groupingBy(d -> {
+            if (d.getCalories() > 400) return "FAT";
+            return "THIN";
+        })));
+        System.out.println(twoLevels);
 
     }
 }
