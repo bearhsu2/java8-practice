@@ -27,9 +27,10 @@ public class CollectorsExamples {
         System.out.println(sum4);
 
 
-        // min/max
+        // min/max/average
         System.out.println(menu.stream().min(Comparator.comparingInt(Dish::getCalories)).get());
         System.out.println(menu.stream().collect(Collectors.minBy(Comparator.comparingInt(Dish::getCalories))).get());
+        System.out.println(menu.stream().collect(Collectors.averagingInt(Dish::getCalories)));
 
         // joining
         System.out.println(menu.stream().map(Dish::getName).collect(Collectors.joining(", ")));
@@ -37,6 +38,9 @@ public class CollectorsExamples {
         // groupBy/partitioningBy
         System.out.println(menu.stream().collect(Collectors.groupingBy(Dish::isVegetarian)));
         System.out.println(menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian)));
+
+        
+
 
 
     }
