@@ -34,6 +34,10 @@ public class CollectorsExamples {
         // joining
         System.out.println(menu.stream().map(Dish::getName).collect(Collectors.joining(", ")));
 
+        // groupBy/partitioningBy
+        System.out.println(menu.stream().collect(Collectors.groupingBy(Dish::isVegetarian)));
+        System.out.println(menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian)));
+
 
     }
 }
