@@ -39,9 +39,5 @@ public class CollectorsExamples {
         System.out.println(menu.stream().collect(Collectors.groupingBy(Dish::isVegetarian)));
         System.out.println(menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian)));
 
-        
-
-
-
     }
 }
