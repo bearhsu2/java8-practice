@@ -1,4 +1,4 @@
-package idv.kuma.optional;
+package idv.kuma.optional.basic;
 
 import java.util.Optional;
 

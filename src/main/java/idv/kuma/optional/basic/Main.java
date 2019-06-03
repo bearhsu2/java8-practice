@@ -1,7 +1,6 @@
-package idv.kuma.optional;
+package idv.kuma.optional.basic;
 
 import java.util.Optional;
-import java.util.function.IntUnaryOperator;
 
 public class Main {
 
@@ -39,5 +38,7 @@ public class Main {
 
         car.getInsurance().ifPresent(System.out::println);
         emptyCar.getInsurance().ifPresent(System.out::println);
+
+
     }
 }

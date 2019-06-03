@@ -1,4 +1,4 @@
-package idv.kuma.optional;
+package idv.kuma.optional.basic;
 
 public class Insurance {
     private String name;
