@@ -6,6 +6,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        // Basic operations
         Car car = new Car(Optional.of(new Insurance("I1")));
         Optional<Car> optCar = Optional.ofNullable(car);
 
