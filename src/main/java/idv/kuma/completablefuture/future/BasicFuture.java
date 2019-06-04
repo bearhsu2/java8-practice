@@ -1,4 +1,4 @@
-package idv.kuma.completablefuture;
+package idv.kuma.completablefuture.future;
 
 import java.util.concurrent.*;
 
