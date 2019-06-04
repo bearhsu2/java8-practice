@@ -20,7 +20,7 @@ public class Shop {
         return calculatePrice(product);
     }
 
-    public Future<Double> getPriceAsync(String product) {
+    public Future<Double> getPriceAsync_old(String product) {
 
         CompletableFuture<Double> futurePrice = new CompletableFuture<>();
 
@@ -35,6 +35,14 @@ public class Shop {
 
         return futurePrice;
     }
+
+    public Future<Double> getPriceAsync(String product) {
+
+        CompletableFuture<Double> futurePrice = CompletableFuture.supplyAsync(() -> calculatePrice(product));
+
+        return futurePrice;
+    }
+
 
     private double calculatePrice(String product) {
         delay();
@@ -60,7 +68,6 @@ public class Shop {
 
         long retrievalTime = (System.nanoTime() - start) / 1_000_000L;
         System.out.println("Price returned after " + retrievalTime + " msecs");
-
 
 
     }
