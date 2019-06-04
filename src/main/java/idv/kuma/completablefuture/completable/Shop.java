@@ -37,10 +37,7 @@ public class Shop {
     }
 
     public Future<Double> getPriceAsync(String product) {
-
-        CompletableFuture<Double> futurePrice = CompletableFuture.supplyAsync(() -> calculatePrice(product));
-
-        return futurePrice;
+        return CompletableFuture.supplyAsync(() -> calculatePrice(product));
     }
 
 
