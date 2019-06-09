@@ -16,11 +16,15 @@ public class Shop {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public double getPrice(String product) {
         return calculatePrice(product);
     }
 
-    public Future<Double> getPriceAsync_UsingAnonymousClass(String product) {
+    private Future<Double> getPriceAsync_UsingAnonymousClass(String product) {
 
         CompletableFuture<Double> futurePrice = new CompletableFuture<>();
 
@@ -36,7 +40,7 @@ public class Shop {
         return futurePrice;
     }
 
-    public Future<Double> getPriceAsync_UsingFactory(String product) {
+    private Future<Double> getPriceAsync_UsingFactory(String product) {
         return CompletableFuture.supplyAsync(() -> calculatePrice(product));
     }
 
