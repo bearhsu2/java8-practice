@@ -16,6 +16,14 @@ public class Main {
         );
     }
 
+    public List<String> findPrices(String product) {
+
+        return shops.parallelStream()
+                .map(shop -> shop.getName() + " price is " + shop.getPrice(product))
+                .collect(Collectors.toList());
+
+    }
+
     public static void main(String[] args) {
 
         Main main = new Main();
@@ -24,14 +32,6 @@ public class Main {
         System.out.println( main.findPrices("SSSAAA"));
         long duration = (System.nanoTime() - start) / 1_000_000;
         System.out.println("Done in " + duration + " msecs");
-
-    }
-
-    public List<String> findPrices(String product) {
-
-        return shops.stream()
-                .map(shop -> shop.getName() + " price is " + shop.getPrice(product))
-                .collect(Collectors.toList());
 
     }
 }
