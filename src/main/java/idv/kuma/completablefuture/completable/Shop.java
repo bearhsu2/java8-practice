@@ -20,7 +20,7 @@ public class Shop {
         return calculatePrice(product);
     }
 
-    public Future<Double> getPriceAsync_old(String product) {
+    public Future<Double> getPriceAsync_UsingAnonymousClass(String product) {
 
         CompletableFuture<Double> futurePrice = new CompletableFuture<>();
 
@@ -36,7 +36,7 @@ public class Shop {
         return futurePrice;
     }
 
-    public Future<Double> getPriceAsync(String product) {
+    public Future<Double> getPriceAsync_UsingFactory(String product) {
         return CompletableFuture.supplyAsync(() -> calculatePrice(product));
     }
 
@@ -50,7 +50,7 @@ public class Shop {
 
         Shop shop = new Shop("BestShop");
         long start = System.nanoTime();
-        Future<Double> futurePrice = shop.getPriceAsync("My Favorite Product");
+        Future<Double> futurePrice = shop.getPriceAsync_UsingFactory("My Favorite Product");
         long invocationTime = (System.nanoTime() - start) / 1_000_000L;
         System.out.println("Invocation returned after " + invocationTime + " msecs");
 
