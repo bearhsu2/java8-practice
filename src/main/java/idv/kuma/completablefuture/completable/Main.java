@@ -51,11 +51,7 @@ public class Main {
                 .collect(Collectors.toList());
 
 
-//        return shops.stream()
-//                .map(shop -> shop.getPrice(product))
-//                .map(Quote::parse)
-//                .map(Discount::applyDiscount)
-//                .collect(Collectors.toList());
+/
 
     }
 
