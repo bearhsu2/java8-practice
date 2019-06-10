@@ -6,6 +6,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import static idv.kuma.completablefuture.completable.Tools.delay;
+import static idv.kuma.completablefuture.completable.Tools.randomDelay;
 
 public class Shop {
 
@@ -48,7 +49,7 @@ public class Shop {
 
 
     private double calculatePrice(String product) {
-        delay();
+        randomDelay();
         return random.nextDouble() * product.charAt(0) + product.charAt(1);
     }
 
