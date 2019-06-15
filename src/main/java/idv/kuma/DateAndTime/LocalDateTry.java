@@ -30,6 +30,12 @@ public class LocalDateTry {
         System.out.println(dateTime);
         System.out.println(dateTime.getYear());
 
+        System.out.println(date.atTime(time));
+        System.out.println(time.atDate(date));
+
+        System.out.println(dateTime.toLocalDate());
+        System.out.println(dateTime.toLocalTime());
+
 
 
     }
