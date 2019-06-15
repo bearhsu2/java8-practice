@@ -1,9 +1,6 @@
 package idv.kuma.DateAndTime;
 
-import java.time.DateTimeException;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.Month;
+import java.time.*;
 import java.time.temporal.ChronoField;
 
 public class LocalDateTry {
@@ -27,6 +24,11 @@ public class LocalDateTry {
         // Parse
         LocalDate parsedDate = LocalDate.parse("2015-03-04");
         System.out.println(parsedDate);
+
+        // DateTime
+        LocalDateTime dateTime = LocalDateTime.now();
+        System.out.println(dateTime);
+        System.out.println(dateTime.getYear());
 
 
 
