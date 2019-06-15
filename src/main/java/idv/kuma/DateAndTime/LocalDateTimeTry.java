@@ -3,7 +3,7 @@ package idv.kuma.DateAndTime;
 import java.time.*;
 import java.time.temporal.ChronoField;
 
-public class LocalDateTry {
+public class LocalDateTimeTry {
 
 
     public static void main(String[] args) {
