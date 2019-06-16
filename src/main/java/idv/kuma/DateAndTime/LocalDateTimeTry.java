@@ -2,6 +2,7 @@ package idv.kuma.DateAndTime;
 
 import java.time.*;
 import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalField;
 
 public class LocalDateTimeTry {
 
@@ -35,6 +36,11 @@ public class LocalDateTimeTry {
 
         System.out.println(dateTime.toLocalDate());
         System.out.println(dateTime.toLocalTime());
+
+        // Create Duplicate
+        System.out.println(date);
+        System.out.println(date.withYear(1990));
+        System.out.println(date.with(ChronoField.YEAR, 1990));
 
 
 
