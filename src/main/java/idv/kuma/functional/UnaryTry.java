@@ -12,6 +12,10 @@ public class UnaryTry {
     public static void main(String[] args) {
         DoubleUnaryOperator convertCtoF = makeConverter(9D / 5, 32);
         System.out.println(convertCtoF.applyAsDouble(30D));
+
+
+        DoubleUnaryOperator convertUSDtoGBP = makeConverter(0.6, 0);
+        System.out.println(convertUSDtoGBP.applyAsDouble(300));
     }
 
 
